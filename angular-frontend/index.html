@@ -11,11 +11,16 @@
 
 	<script src="js/angular.js"></script>
 	<script src="js/angular-resource.js"></script>
-	<script src="js/main.js"></script>
-	<script src="js/TodosController.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/HoundController.js"></script>
+
 </head>
 
-<body>
-	
+<body ng-app='app'>
+
+	<div ng-controller="HoundController as controller">
+		{{ 300 * 300}}
+	</div>
+
 </body>
 </html>
