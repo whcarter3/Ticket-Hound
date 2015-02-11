@@ -1,0 +1,8 @@
+<p>Search Results</p>
+	<ul>
+	<% @stubhub_results["events"].each do |r| %>
+		<li>
+			<strong>Artist:</strong> <%= r["title"] %>  --  <strong>Lowest Price:</strong> <%= r["ticketInfo"]["minPrice"] %>
+		</li>
+	<% end %>
+	</ul>
