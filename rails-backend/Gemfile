@@ -18,6 +18,8 @@ gem 'httparty'
 gem 'pg', '~> 0.18.1'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+#Use factory_girl for testing
+gem 'factory_girl'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -30,6 +32,14 @@ gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+
+#guard gem for continuous testing
+group :development do
+  gem 'guard'
+end
+
+#guard for rspec testing
+gem 'guard-rspec', require: false 
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
