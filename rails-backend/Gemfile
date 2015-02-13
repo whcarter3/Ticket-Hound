@@ -36,6 +36,7 @@ gem 'bcrypt', '~> 3.1.7'
 #guard gem for continuous testing
 group :development do
   gem 'guard'
+  gem 'better_errors'
 end
 
 #guard for rspec testing
