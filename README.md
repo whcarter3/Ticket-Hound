@@ -1,4 +1,4 @@
-[![Circle CI](https://circleci.com/gh/whcarter3/Ticket-Hound/tree/master.svg?style=svg)](https://circleci.com/gh/whcarter3/Ticket-Hound/tree/master)
+[![Circle CI](https://circleci.com/gh/whcarter3/Ticket-Hound.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/whcarter3/Ticket-Hound.svg?style=shield&circle-token=:circle-token)
 
 # Ticket-Hound.us
 
