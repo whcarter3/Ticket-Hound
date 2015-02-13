@@ -1,3 +1,5 @@
+[![Circle CI](https://circleci.com/gh/whcarter3/Ticket-Hound/tree/master.svg?style=svg)](https://circleci.com/gh/whcarter3/Ticket-Hound/tree/master)
+
 # Ticket-Hound.us
 
 A simple source for finding the cheapest tickets to concerts near you.
