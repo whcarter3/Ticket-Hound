@@ -29,6 +29,10 @@ GEM
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.10)
+    better_errors (2.1.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
     builder (3.2.2)
     celluloid (0.16.0)
       timers (~> 4.0.0)
@@ -178,6 +182,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
+  better_errors
   coffee-rails (~> 4.0.0)
   factory_girl
   figaro
