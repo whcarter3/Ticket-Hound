@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 	attr_accessible :username, :email, :password
 
+	# EMAIL_REGEX = /\b[A-Z0-9._%a-z\-]+@(?:[A-Z0-9a-z\-]+\.)+[A-Za-z]{2,4}\z/
+
 	validates :username, 	presence: true, 
 							uniqueness: { case_sensitive: false}, 
 							length: {in: 3..24}
@@ -11,7 +13,7 @@ class User < ActiveRecord::Base
 
 	validates :email, 		presence: true,
 							uniqueness: {case_sensitive: false}
-							:with => /\b[A-Z0-9._%a-z\-]+@(?:[A-Z0-9a-z\-]+\.)+[A-Za-z]{2,4}\z/
+							#, :with => EMAIL_REGEX
 
 	has_secure_password 
 

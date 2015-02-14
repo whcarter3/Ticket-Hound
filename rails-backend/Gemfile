@@ -14,13 +14,14 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'figaro'
 # Gem for accessing Stub Hub API
 gem 'httparty'
+#adds attr_accessible and attr_protected to methods
+gem 'protected_attributes'
 #postgresql gem
 gem 'pg', '~> 0.18.1'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 #Use factory_girl for testing
-gem 'factory_girl'
-
+gem "factory_girl_rails", "~> 4.0"
 
 gem 'rspec_junit_formatter', :github => 'circleci/rspec_junit_formatter', group: :test
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
