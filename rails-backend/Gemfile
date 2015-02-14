@@ -14,16 +14,21 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'figaro'
 # Gem for accessing Stub Hub API
 gem 'httparty'
+#adds attr_accessible and attr_protected to methods
+gem 'protected_attributes'
 #postgresql gem
 gem 'pg', '~> 0.18.1'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 #Use factory_girl for testing
-gem 'factory_girl'
+gem "factory_girl_rails", "~> 4.0"
+
+gem 'rspec_junit_formatter', :github => 'circleci/rspec_junit_formatter', group: :test
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
+
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
