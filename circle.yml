@@ -1,0 +1,7 @@
+machine:
+  ruby:
+    version: 2.1.3
+
+test:
+  override:
+    - rspec ./rails-backend/spec
