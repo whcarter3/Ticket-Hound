@@ -47,6 +47,8 @@ end
 #guard for rspec testing
 gem 'guard-rspec', require: false 
 
+gem "codeclimate-test-reporter", group: :test, require: nil
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
