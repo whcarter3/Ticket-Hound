@@ -4,4 +4,4 @@ machine:
 
 test:
   override:
-    - rspec ./rails-backend/spec
+    - bundle exec rspec
