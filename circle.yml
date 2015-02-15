@@ -1,6 +1,8 @@
 machine:
   ruby:
     version: 2.1.3
+  environment:
+    CODECLIMATE_REPO_TOKEN: 6e7af53bef37f4382fd072d3c4542139d6fefd407bba44fdca4171ba8b046db7
 
 test:
   override:
