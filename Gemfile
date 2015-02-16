@@ -44,6 +44,9 @@ group :development do
   gem 'better_errors'
 end
 
+#for faking info and other things
+gem 'faker', '~> 1.4.3'
+
 #guard for rspec testing
 gem 'guard-rspec', require: false 
 
