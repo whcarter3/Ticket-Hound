@@ -21,6 +21,7 @@ RSpec.describe User, :type => :model do
   end
 
   it "is invalid if username is not unique" do
+    FactoryGirl.create(:user, username:"bob")
     user2  = FactoryGirl.build(:user, username: "bob")
     user3  = FactoryGirl.build(:user, username: "Bob")
     expect(user2).to be_invalid
@@ -38,6 +39,7 @@ RSpec.describe User, :type => :model do
   end
 
   it "is invalid without a unique email" do
+    FactoryGirl.create(:user, email: 'test@test.com')
     user = FactoryGirl.build(:user, email: 'test@test.com')
     user1 = FactoryGirl.build(:user, email: 'Test@test.com')
     expect(user).to be_invalid

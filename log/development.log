@@ -186,3 +186,5 @@ NoMethodError - undefined method `each' for nil:NilClass:
 
 
 Started POST "/__better_errors/d8bb9face65bcf47/variables" for 127.0.0.1 at 2015-02-15 15:45:22 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
