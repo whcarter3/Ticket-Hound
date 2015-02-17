@@ -1,5 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe Concert, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Concert do
+  it {should have_many(:wishlists).dependent(:destroy)}
+  it {should have_many(:users).through(:wishlists)}
+  it {should allow_mass_assignment_of(:tm_concert_id)}
 end

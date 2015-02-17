@@ -1,4 +1,4 @@
 class Wishlist < ActiveRecord::Base
-  has_many :users
-  has_many :concerts
+  belongs_to :user
+  belongs_to :concert
 end
