@@ -16,6 +16,8 @@ gem 'figaro'
 gem 'httparty'
 #adds attr_accessible and attr_protected to methods
 gem 'protected_attributes'
+# Active Model Serializers
+gem 'active_model_serializers'
 #postgresql gem
 gem 'pg', '~> 0.18.1'
 # Use jquery as the JavaScript library

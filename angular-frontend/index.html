@@ -19,6 +19,11 @@
 <body ng-app='app'>
 
 	<div ng-controller="HoundController as controller">
+		<ul ng-repeat="user in controller.Users.users">
+			<li>
+				{{ user.username }}
+			</li>
+		</ul>
 		<strong>Lady Gaga</strong> ticket price: ${{ 300 * 300}}.
 	</div>
 
