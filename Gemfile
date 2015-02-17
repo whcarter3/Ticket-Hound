@@ -40,6 +40,9 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+#terminal-notifier-guard
+gem 'terminal-notifier-guard', '~> 1.6.1'
+
 #guard gem for continuous testing
 group :development do
   gem 'guard'
