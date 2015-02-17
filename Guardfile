@@ -2,7 +2,7 @@
 # More info at https://github.com/guard/guard#readme
 
 ## Uncomment and set this to only include directories you want to watch
-# directories %w(app lib config test spec features)
+directories %w(app lib config spec)
 
 ## Uncomment to clear the screen before every task
 # clearing :on
@@ -57,6 +57,7 @@ guard :rspec, cmd: "bundle exec rspec -fd" do
     [
       rspec.spec.("routing/#{m[1]}_routing"),
       rspec.spec.("controllers/#{m[1]}_controller"),
+      rspec.spec.("controllers/api/#{m}_controller"),
       rspec.spec.("acceptance/#{m[1]}")
     ]
   end
