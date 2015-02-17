@@ -1,3 +1,4 @@
 class Concert < ActiveRecord::Base
-  has_many :users, :through => :wishlists
+  belongs_to :wishlist
+  has_many :users, through: :wishlists
 end

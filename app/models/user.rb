@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
 
-	has_one :wishlist, :dependent => :destroy
-	has_many :concerts, :through => :wishlist
-
 	attr_accessible :username, :email, :password
+
+	has_one :wishlist, dependent: :destroy
+	has_many :concerts, :through => :wishlists
 
 	validates :username, 	presence: true, 
 						uniqueness: { case_sensitive: false}, 

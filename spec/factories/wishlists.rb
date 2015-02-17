@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :wishlist do
-    user_id 1
-concert_id 1
+    user nil
+concert nil
   end
 
 end
