@@ -1,4 +1,7 @@
 class Concert < ActiveRecord::Base
-  belongs_to :wishlist
-  has_many :users, through: :wishlists
+
+  attr_accessible :tm_concert_id
+
+  has_many :wishlists, dependent: :destroy
+  has_many :users, :through => :wishlists
 end
