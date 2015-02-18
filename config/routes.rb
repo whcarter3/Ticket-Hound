@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   # return 200 for OPTION requests (XSS, Test Only)
   match '*all' => 'application#handle_options', via: :options
 
+  post '/authenticate' => 'authentication#sign_in'
+
   namespace :api, defaults: { format: "json" } do
     resources :users
   end

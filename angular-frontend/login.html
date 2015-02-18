@@ -1,1 +1,9 @@
-login.html
+<div ng-controller="AuthenticationController as auth">
+      <!-- begin login form -->
+      <form class="login-form" ng-submit="auth.login()">
+          <input class="login-input" type="text" placeholder="email" ng-model="auth.email">
+          <input class="login-input" type="password" placeholder="password" ng-model="auth.password">
+          <input type="submit" value="Log in" class="btn btn-submit">
+      </form>
+      <!-- end login form -->
+  </div>

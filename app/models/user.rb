@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
 
 	has_many :wishlists, dependent: :destroy
 	has_many :concerts, :through => :wishlists
+	has_one :api_key, dependent: :destroy
+	before_create :create_api_key
 
 	validates :username, 	
 						presence: true, 
@@ -22,10 +24,19 @@ class User < ActiveRecord::Base
 						uniqueness: {case_sensitive: false},
 						format: {:with => EMAIL_REGEX}
 
-	has_secure_password 
+	has_secure_password
 
+	def self.find_by_access_token(access_token)
+		APIKey.find_by(access_token: access_token).user
+	end
 	
+	
+	# private methods
 	private
+
+	def create_api_key
+		self.api_key = APIKey.create
+	end
 
 	def downcase_email
 		self.email = email.downcase
