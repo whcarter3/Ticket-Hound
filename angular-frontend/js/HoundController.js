@@ -19,7 +19,7 @@
             //     }
 
             self.Users = getUsers();
-            // self.results = results;
+            self.results;
 
 
             function getUsers(){
@@ -32,9 +32,16 @@
             //         .error(function(){return "you done fucked up son"});
             // };
 
-            $http.jsonp('https://app.ticketmaster.com/v1/events?q="gaga"&lat=34.02&long=-118.49&radius=25&apikey=1u3s6SztBBko48JPpTCASNtS0irCgBAI')
+            // function jsonp_callback(data){
+            //     console.log("Data found");
+            // }
+
+            $http.jsonp("https://app.ticketmaster.com/v1/events?q=gaga&apikey=1u3s6SztBBko48JPpTCASNtS0irCgBAI")
             .success(function(response) {
                 self.results = response;
+            })
+            .error(function(){
+                self.results = "You done fucked up son"
             });
         }
 
