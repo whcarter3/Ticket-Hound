@@ -3,15 +3,17 @@
         .module('app')
         .controller('HoundController', HoundControllerFunc);
 
-        HoundControllerFunc.$inject = ['$resource'];
+        HoundControllerFunc.$inject = ['$resource', '$http'];
 
-        function HoundControllerFunc($resource){
+        function HoundControllerFunc($resource, $http){
             var self = this;
 
             var User = $resource('http://localhost:3000/api/users/:id', {id: '@id'}, {'update': {method: "PUT"}});
 
             self.Users = getUsers();
             self.addUser = addUser();
+            self.results = tixRequest();
+            // self.results = ticketMaster();
 
             function getUsers(){
                 return User.get();
@@ -27,5 +29,20 @@
             }
 
 
-    };
+            function tixRequest(){
+                var url = 'http://jsonpify.heroku.com?q="gaga"&lat=34.02&long=-118.49&radius=25&apikey=1u3s6SztBBko48JPpTCASNtS0irCgBAI&callback=JSON_CALLBACK&resource=https://app.ticketmaster.com/v1/events';
+                $http.jsonp(url)
+                    .success(function(data, status, headers, config) {
+                    console.log(data);
+                    self.results = data;
+                    })
+                    .error(function(data, status, headers, config) {  
+                    console.log(data);
+                    self.results = data;
+                    });
+                }
+            }
+
+
+    
 })();

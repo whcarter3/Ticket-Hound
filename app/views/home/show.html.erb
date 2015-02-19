@@ -6,3 +6,10 @@
 		</li>
 	<% end %>
 	</ul>
+	<ul>
+	<% @ticketmaster_results["events"].each do |t| %>
+		<li>
+			<%= t["name"] %> and the <%= t[0] %> will be at:
+			<%= t["eventdate"] %>
+		</li>
+	<% end %>
