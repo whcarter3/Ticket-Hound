@@ -43,7 +43,18 @@
                 $http.jsonp(url)
                     .success(function(data, status, headers, config) {
                     console.log(data);
-                    self.results = data;
+                    // self.results = data;
+                    self.results = data.events.length > 0 ? data : alert("No results, please try again...") ;
+                    // console.log(self.results);
+                    // if (data.length > 0 ){
+                    //     results = data
+                    //     console.log(data)
+                    // } else {
+                    //     results = "No data";
+                    //     console.log(data);
+                    // }
+                    // self.results = data if data.length < 0 ? data : "No results" ;
+                    // self.results = data.length > 0 ? data : "Sorry, no results. Please try again.";
                     })
                     .error(function(data, status, headers, config) {  
                     console.log(data);

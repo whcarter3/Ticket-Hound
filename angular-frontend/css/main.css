@@ -1,8 +1,11 @@
 .hound {
 	color: white;
-	padding-top: 7px;
+	padding-top: 5px;
 	background-color: deepskyblue;
 	border: deepskyblue;
+	/*font-family: 'League Script';*/
+	font-family: helvetica-neue;
+	font-size: 60px;
 }
 
 .btn-hound {
