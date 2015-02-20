@@ -15,40 +15,37 @@
 	<script src="js/app.js"></script>
 	<script src="js/HoundController.js"></script>
 	<script src="js/AuthenticationController.js"></script>
-
+	
+	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css" rel='stylesheet' type="text/css">
 	<link rel="stylesheet" href="css/component.css">
 
 </head>
 
 <body ng-app='app'>
 
+	<!-- TOP "NAV" -->
+	<div class='navbar navbar-inverse navbar-static-top text-center hound'>
+			
+			<h1><i class='glyphicon glyphicon-music'></i> Ticket Hound.us <i class='glyphicon glyphicon-music'></i></h1>
+		
+	</div>
+	
+	<!-- BODY -->
 	<div class="container" ng-controller="HoundController as controller">
-		<!-- <div> -->
-		<!-- <div ng-controller="AuthenticationController as auth"> -->
-      		<!-- begin signup form -->
-<!--       		<form class="signup-form" ng-submit="controller.addUser()">
-         		<input class="login-input" type="text" placeholder="username" ng-model="newUser.username">
-         		<input class="login-input" type="text" placeholder="email" ng-model="newUser.email">
-        		<input class="login-input" type="password" placeholder="password" ng-model="newUser.password">
-        		<input class="login-input" type="password" placeholder="confirm password" ng-model="newUser.password_confirm">
-        		<input type="submit" value="Sign Up" class="btn btn-submit">
-    		</form> -->
-      	<!-- end signup form -->
- 		<!-- </div> -->
-
 
  		<!-- SEARCH FORM -->
-		<div class="row text-center">
+		<div class="row text-center" ng-if="!controller.searchInit">
 				<br>
 				<form class="search-form" ng-submit="controller.results()">
 		         	<h1>I want to see </h1><input class="input__field input__field--yoko" type="text" id='input-1' placeholder="Lady Gaga..." ng-model="controller.performerName">
 		         	<label class="input__label input__label--yoko" for="input-1"></label>
 		         		<span class="input__label-content input__label-content--yoko"></span> <!-- near <input class="search-input" type="text" placeholder="Los Angeles" ng-model="controller.city">... -->
 		        	<br> <br><input type="submit" value="Fetch!" class="btn btn-submit btn-danger">
+
 		    	</form>
-	    	
+		<!-- END SEARCH FORM -->
     	</div>
 
 		<!-- RESULTS LIST -->
@@ -57,19 +54,15 @@
 				<dl class="results">
 					<dd><strong>Who:</strong> {{ result.name }} - </dd>
 					<dd><strong>TM ID:</strong> {{ result.id }} - </dd>
-					<dd><strong>ddresales:</strong> {{ result.presales[0].label }}: 
-					{{ result.presales[0].value }} - 
-					{{ result.presales[1].label }}:  
-					{{ result.presales[1].value }} - 
-					{{ result.presales[2].label }}:  
-					{{ result.presales[2].value }} - 
-					{{ result.presales[3].label }}: 
+					<dd><strong>Presales:</strong> 
 					{{ result.presales[3].value }} - 
 					<dd><strong>Off Sale:</strong> {{ result.offsale.value }} </dd>
 				</dl>
-			</ul>
-		</div>		
-	</div>
 
+			</ul>
+		<!-- END SEARCH LIST -->
+		</div>	
+	<!-- END BODY CONTAINER -->
+	</div>
 </body>
 </html>
