@@ -12,9 +12,12 @@
 
             self.Users = getUsers();
             // self.addUser = addUser();
-            self.results = tixRequest();
+            self.results = tixRequest;
             // self.results = ticketMaster();
             // self.performerName = performerName;
+            // var performerName = self.performerName;
+            // self.performerName = "";
+
 
             function getUsers(){
                 return User.get();
@@ -31,8 +34,10 @@
 
 
             function tixRequest(){
-                var performerName = performerName;
-                var url = 'http://jsonpify.heroku.com?q="' + performerName + '"&lat=34.02&long=-118.49&radius=25&apikey=1u3s6SztBBko48JPpTCASNtS0irCgBAI&callback=JSON_CALLBACK&resource=https://app.ticketmaster.com/v1/events';
+                // var performerName = self.performerName;
+                var performerName = self.performerName;
+                
+                var url = 'http://jsonpify.heroku.com?q="' + performerName + '"&lat=34.02&long=-118.49&radius=100&apikey=1u3s6SztBBko48JPpTCASNtS0irCgBAI&callback=JSON_CALLBACK&resource=https://app.ticketmaster.com/v1/events';
                 $http.jsonp(url)
                     .success(function(data, status, headers, config) {
                     console.log(data);
@@ -42,8 +47,10 @@
                     console.log(data);
                     self.results = data;
                     });
-                }
+                self.performerName = "";
+                
             }
+        }
 
 
     

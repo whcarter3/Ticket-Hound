@@ -39,7 +39,15 @@
 				{{ user.username }}
 			</li>
 		</ul>
+
 		<strong>Lady Gaga</strong> ticket price: ${{ 300 * 300}}.
+	
+		<form class="search-form" ng-submit="controller.results()">
+         	<input class="search-input" type="text" placeholder="Lady Gaga..." ng-model="controller.performerName">
+        	<input type="submit" value="Fetch!" class="btn btn-submit">
+    	</form>
+
+
 		<ul ng-repeat="result in controller.results.events track by $index">
 			<li>
 				<strong>Who:</strong> {{ result.name }} - 
@@ -53,19 +61,13 @@
 				{{ result.presales[3].label }}: 
 				{{ result.presales[3].value }} - 
 				<strong>Off Sale:</strong> {{ result.offsale.value }}
-				
 			</li>
-			
 		</ul>
 
 		<!-- SEARCH FORM -->
-		<section>
-			<form class="search-form" ng-submit="controller.results()">
-         		<input class="search-input" type="text" placeholder="Lady Gaga" ng-model="controller.performerName">
-         		<!-- <input class="login-input" type="text" placeholder="email" ng-model="newUser.email"> -->
-        		<input type="submit" value="Fetch!" class="btn btn-submit">
-    		</form>
-		</section>
+		
+			
+		
 		
 	</div>
 
