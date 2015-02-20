@@ -40,6 +40,7 @@
                 var url = 'http://jsonpify.heroku.com?q="' + performerName + '"&lat=34.02&long=-118.49&radius=100&apikey=1u3s6SztBBko48JPpTCASNtS0irCgBAI&callback=JSON_CALLBACK&resource=https://app.ticketmaster.com/v1/events';
                 $http.jsonp(url)
                     .success(function(data, status, headers, config) {
+                    console.log(data);
                     self.results = data;
                     })
                     .error(function(data, status, headers, config) {  

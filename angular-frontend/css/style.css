@@ -1,10 +1,30 @@
 body {
 	background-image: url(../img/ticketHound.png);
 	backgroud-size: cover;
+	font-family: sans-serif;
 	color: white;
 	font-size: 60px;
 }
 
 .container {
 	top: 120px;
+}
+
+.results {
+	font-family: courier;
+	font-size: 30px;
+	color: lightgray;
+	background-color: rgba(125, 125, 125, 0.7);
+}
+
+.btn {
+	padding: 20px 50px;
+	font-size: 25px;f
+}
+
+h1 {
+	font-size: 50px;
+	background-color: #ad473c;
+	background-opacity: 0.8;
+	color: linen;
 }
