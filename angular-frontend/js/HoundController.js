@@ -48,7 +48,6 @@
                     self.results = data;
                     });
                 self.performerName = "";
-                
             }
         }
 
