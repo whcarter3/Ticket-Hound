@@ -17,6 +17,8 @@
 	<script src="js/AuthenticationController.js"></script>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/component.css">
 
 </head>
 
@@ -41,7 +43,9 @@
 		<div class="row text-center">
 			
 				<form class="search-form" ng-submit="controller.results()">
-		         	I want to see <input class="search-input" type="text" placeholder="Lady Gaga..." ng-model="controller.performerName"> <!-- near <input class="search-input" type="text" placeholder="Los Angeles" ng-model="controller.city">... -->
+		         	I want to see <input class="input__field input__field--yoko" type="text" id='input-1' placeholder="Lady Gaga..." ng-model="controller.performerName">
+		         	<label class="input__label input__label--yoko" for="input-1"></label>
+		         		<span class="input__label-content input__label-content--yoko">Band</span> <!-- near <input class="search-input" type="text" placeholder="Los Angeles" ng-model="controller.city">... -->
 		        	<input type="submit" value="Fetch!" class="btn btn-submit btn-primary">
 		    	</form>
 	    	
@@ -50,10 +54,10 @@
 		<!-- RESULTS LIST -->
 		<div class="row text-center">
 			<ul class="list-unstyled" ng-repeat="result in controller.results.events track by $index">
-				<li>
-					<p><strong>Who:</strong> {{ result.name }} - </p>
-					<p><strong>TM ID:</strong> {{ result.id }} - </p>
-					<p><strong>Presales:</strong> {{ result.presales[0].label }}: 
+				<dl>
+					<dd><strong>Who:</strong> {{ result.name }} - </dd>
+					<dd><strong>TM ID:</strong> {{ result.id }} - </dd>
+					<dd><strong>ddresales:</strong> {{ result.presales[0].label }}: 
 					{{ result.presales[0].value }} - 
 					{{ result.presales[1].label }}:  
 					{{ result.presales[1].value }} - 
@@ -61,8 +65,8 @@
 					{{ result.presales[2].value }} - 
 					{{ result.presales[3].label }}: 
 					{{ result.presales[3].value }} - 
-					<p><strong>Off Sale:</strong> {{ result.offsale.value }} </p>
-				</li>
+					<dd><strong>Off Sale:</strong> {{ result.offsale.value }} </dd>
+				</dl>
 			</ul>
 		</div>		
 	</div>

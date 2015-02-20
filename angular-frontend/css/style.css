@@ -1,0 +1,10 @@
+body {
+	background-image: url(../img/ticketHound.png);
+	backgroud-size: cover;
+	color: white;
+	font-size: 60px;
+}
+
+.container {
+	top: 120px;
+}
