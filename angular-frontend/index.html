@@ -15,36 +15,31 @@
 	<script src="js/app.js"></script>
 	<script src="js/HoundController.js"></script>
 	<script src="js/AuthenticationController.js"></script>
-
+	
+	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
 
 </head>
 
 <body ng-app='app'>
 
+	<!-- TOP "NAV" -->
+	<div class='navbar navbar-inverse navbar-static-top text-center hound'>
+			
+			<h1><i class='glyphicon glyphicon-music'></i> TicketHound.us <i class='glyphicon glyphicon-music'></i></h1>
+		
+	</div>
+	
+	<!-- BODY -->
 	<div class="container" ng-controller="HoundController as controller">
-		<!-- <div> -->
-		<!-- <div ng-controller="AuthenticationController as auth"> -->
-      		<!-- begin signup form -->
-<!--       		<form class="signup-form" ng-submit="controller.addUser()">
-         		<input class="login-input" type="text" placeholder="username" ng-model="newUser.username">
-         		<input class="login-input" type="text" placeholder="email" ng-model="newUser.email">
-        		<input class="login-input" type="password" placeholder="password" ng-model="newUser.password">
-        		<input class="login-input" type="password" placeholder="confirm password" ng-model="newUser.password_confirm">
-        		<input type="submit" value="Sign Up" class="btn btn-submit">
-    		</form> -->
-      	<!-- end signup form -->
- 		<!-- </div> -->
-
 
  		<!-- SEARCH FORM -->
-		<div class="row text-center">
-			
+		<div class="row text-center" ng-if="!controller.searchInit">
 				<form class="search-form" ng-submit="controller.results()">
-		         	I want to see <input class="search-input" type="text" placeholder="Lady Gaga..." ng-model="controller.performerName"> <!-- near <input class="search-input" type="text" placeholder="Los Angeles" ng-model="controller.city">... -->
-		        	<input type="submit" value="Fetch!" class="btn btn-submit btn-primary">
+		         	<span>I want to see  <input class="search-input" type="text" placeholder="Lady Gaga!" ng-model="controller.performerName"><!-- near <input class="search-input" type="text" placeholder="Los Angeles" ng-model="controller.city">... -->   <input type="submit" value="Fetch!" class="btn btn-submit btn-primary btn-hound"></span>
 		    	</form>
-	    	
+		<!-- END SEARCH FORM -->
     	</div>
 
 		<!-- RESULTS LIST -->
@@ -56,16 +51,17 @@
 					<p><strong>Presales:</strong> {{ result.presales[0].label }}: 
 					{{ result.presales[0].value }} - 
 					{{ result.presales[1].label }}:  
-					{{ result.presales[1].value }} - 
+					{{ result.presales[1].value }}
 					{{ result.presales[2].label }}:  
-					{{ result.presales[2].value }} - 
+					{{ result.presales[2].value }}
 					{{ result.presales[3].label }}: 
-					{{ result.presales[3].value }} - 
+					{{ result.presales[3].value }}
 					<p><strong>Off Sale:</strong> {{ result.offsale.value }} </p>
 				</li>
 			</ul>
-		</div>		
+		<!-- END SEARCH LIST -->
+		</div>	
+	<!-- END BODY CONTAINER -->
 	</div>
-
 </body>
 </html>
