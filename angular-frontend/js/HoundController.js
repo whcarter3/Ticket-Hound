@@ -42,9 +42,9 @@
                 var url = 'http://jsonpify.heroku.com?q="' + performerName + '"&lat=34.02&long=-118.49&radius=100&apikey=1u3s6SztBBko48JPpTCASNtS0irCgBAI&callback=JSON_CALLBACK&resource=https://app.ticketmaster.com/v1/events';
                 $http.jsonp(url)
                     .success(function(data, status, headers, config) {
-                    console.log(data);
+                    console.log(data.events);
                     // self.results = data;
-                    self.results = data.events.length > 0 ? data : alert("No results, please try again...") ;
+                    self.results = data.events.length > 0 ? data.events : alert("No results, please try again...") ;
                     // console.log(self.results);
                     // if (data.length > 0 ){
                     //     results = data

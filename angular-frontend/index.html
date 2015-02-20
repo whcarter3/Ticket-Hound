@@ -26,10 +26,8 @@
 <body ng-app='app'>
 
 	<!-- TOP "NAV" -->
-	<div class='navbar navbar-inverse navbar-static-top text-center hound'>
-			
-			<h1><i class='glyphicon glyphicon-music'></i> Ticket Hound.us <i class='glyphicon glyphicon-music'></i></h1>
-		
+	<div class='navbar navbar-inverse navbar-static-top text-center hound'>	
+		<h1><i class='glyphicon glyphicon-music'></i> Ticket Hound.us <i class='glyphicon glyphicon-music'></i></h1>
 	</div>
 	
 	<!-- BODY -->
@@ -38,27 +36,24 @@
  		<!-- SEARCH FORM -->
 		<div class="row text-center" ng-if="!controller.searchInit">
 				<form class="search-form" ng-submit="controller.results()">
-		         	<span>I want to see  <input class="search-input" type="text" placeholder="Lady Gaga!" ng-model="controller.performerName"><!-- near <input class="search-input" type="text" placeholder="Los Angeles" ng-model="controller.city">... -->   <input type="submit" value="Fetch!" class="btn btn-submit btn-primary btn-hound"></span>
+		         	<span>I want to seeee  <input class="search-input" type="text" placeholder="Lady Gaga OMG!!!" ng-model="controller.performerName"><!-- near <input class="search-input" type="text" placeholder="Los Angeles" ng-model="controller.city">... -->   <input type="submit" value="Fetch!" class="btn btn-submit btn-primary btn-hound"></span>
 		    	</form>
 		<!-- END SEARCH FORM -->
     	</div>
 
 		<!-- RESULTS LIST -->
 		<div class="row text-center">
-			<ul class="list-unstyled" ng-repeat="result in controller.results.events track by $index">
-				<li>
-					<p><strong>Who:</strong> {{ result.name }} - </p>
-					<p><strong>TM ID:</strong> {{ result.id }} - </p>
-					<p><strong>Presales:</strong> {{ result.presales[0].label }}: 
-					{{ result.presales[0].value }} - 
-					{{ result.presales[1].label }}:  
-					{{ result.presales[1].value }}
-					{{ result.presales[2].label }}:  
-					{{ result.presales[2].value }}
-					{{ result.presales[3].label }}: 
-					{{ result.presales[3].value }}
-					<p><strong>Off Sale:</strong> {{ result.offsale.value }} </p>
-				</li>
+			<ul class="list-unstyled" ng-repeat="result in controller.results track by $index">
+				<div class="well">
+					<li>
+						<p><strong>Who:</strong> {{ result.name }} - </p>
+						<p><strong>When:</strong> {{ result.eventdate.value }}</p>
+						<p><strong>TM ID:</strong> {{ result.id }} - </p>
+						<p><strong>Presales:</strong> {{ result.presales[0].label }}: 
+						{{ result.presales[0].value }}</p>
+						<p><strong>Off Sale:</strong> {{ result.offsale.value }} </p>
+					</li>
+				</div>
 			</ul>
 		<!-- END SEARCH LIST -->
 		</div>	
